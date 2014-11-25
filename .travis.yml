@@ -4,6 +4,6 @@ python:
   - "3.4"
 # command to install dependencies
 install:
-  - "pip install -r requirements.txt"
+  - "pip install -r hello_git/requirements.txt"
 # command to run tests
-script: py.test tests/
+script: py.test hello_git/tests/
