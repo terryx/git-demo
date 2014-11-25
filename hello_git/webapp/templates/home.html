@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Hello Git!</title>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Guess The Number</h1>
+
+            <p>Guess a number between 0 to 10. I will tell you whether your guess is correct, too low, or too high.</p>
+
+            <a href="https://github.com/cheah/git-demo"><img
+                    style="position: absolute; top: 0; right: 0; border: 0;"
+                    src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+                    alt="Fork me on GitHub"
+                    data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+        </div>
+
+        <div class="user_input">
+             <form method="post">
+                 {{ form.hidden_tag() }}
+                 {{ form.number }}
+                 <input type="submit" value="Submit" class="submit_button"/>
+             </form>
+        </div>
+
+        {% if result %}
+        <div class="result">
+            <p>Your Guess is: {{ result }}</p>
+        </div>
+        {% endif %}
+
+
+        {% if form.errors %}
+        <div class="validation_error">
+            {% if form.number.errors %}
+                {% for error in form.number.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endif %}
+
+    </body>
+</html>
