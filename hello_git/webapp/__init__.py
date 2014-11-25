@@ -26,15 +26,20 @@ def home():
 
     if number_form.validate_on_submit():
         user_number = int(request.form['number'])
-        result = "Correct!"
-        if user_number < magic_number:
-            result = "Too Low!"
-        elif user_number > magic_number:
-            result = "Too High!"
-
+        result = get_result(user_number, magic_number)
         return render_template('home.html', form=number_form, result=result)
 
     return render_template('home.html', form=number_form)
+
+
+def get_result(guessed_number, correct_number):
+    """Return the whether the guessed number is Lower, Higher, or same as the correct number"""
+    if guessed_number < correct_number:
+        return "Too Low!"
+    elif guessed_number > correct_number:
+        return "Too High!"
+    else:
+        return "Correct!"
 
 
 if __name__ == '__main__':
