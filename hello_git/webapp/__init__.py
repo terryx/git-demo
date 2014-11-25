@@ -34,9 +34,9 @@ def home():
 
 def get_result(guessed_number, correct_number):
     """Return the whether the guessed number is Lower, Higher, or same as the correct number"""
-    if guessed_number < correct_number:
+    if guessed_number > correct_number:
         return "Too Low!"
-    elif guessed_number > correct_number:
+    elif guessed_number < correct_number:
         return "Too High!"
     else:
         return "Correct!"
