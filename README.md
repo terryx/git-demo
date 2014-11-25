@@ -1,5 +1,7 @@
 # git-demo
 
+[![Build Status](https://travis-ci.org/cheah/git-demo.svg?branch=master)](https://travis-ci.org/cheah/git-demo)    
+
 This is a simple Python Webapp to demonstrate the usage of Git.
 
 ## Prerequisites
